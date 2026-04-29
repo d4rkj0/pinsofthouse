@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informativa Privacy - Quanti giorni mancano</title>
+  <meta name="description" content="Informativa privacy dell'app Quanti giorni mancano sviluppata da Giuseppe Maiello - Pin Soft House." />
+  <style>
+    :root {
+      --bg: #0d0b24;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-border: rgba(255, 255, 255, 0.14);
+      --text: #f8f5ff;
+      --muted: #c8bfdc;
+      --gold: #ffd166;
+      --orange: #ff9f43;
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 209, 102, 0.22), transparent 28%),
+        radial-gradient(circle at top right, rgba(155, 92, 255, 0.28), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255, 111, 145, 0.16), transparent 35%),
+        linear-gradient(145deg, #0a0820, #151036 55%, #09071d);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 24px;
+    }
+
+    .page { max-width: 920px; margin: 0 auto; }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      margin-bottom: 24px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 30px 20px 28px;
+    }
+
+    .app-icon {
+      width: 82px;
+      height: 82px;
+      border-radius: 24px;
+      margin: 0 auto 18px;
+      display: grid;
+      place-items: center;
+      font-size: 42px;
+      background: linear-gradient(145deg, rgba(255, 209, 102, 0.95), rgba(255, 159, 67, 0.95));
+      box-shadow: 0 20px 45px rgba(255, 159, 67, 0.25);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    h1 span { color: var(--gold); }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .privacy-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: clamp(22px, 4vw, 42px);
+      box-shadow: 0 28px 80px var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .info-box {
+      border-radius: 22px;
+      padding: 18px 20px;
+      margin: 20px 0 30px;
+      background: rgba(255, 209, 102, 0.12);
+      border: 1px solid rgba(255, 209, 102, 0.25);
+      color: #fff8dc;
+    }
+
+    h2 {
+      margin-top: 34px;
+      margin-bottom: 10px;
+      font-size: 1.45rem;
+      color: var(--gold);
+      letter-spacing: -0.02em;
+    }
+
+    p { margin: 0 0 14px; color: var(--text); }
+
+    ul {
+      padding-left: 22px;
+      margin-top: 8px;
+      margin-bottom: 20px;
+    }
+
+    li { margin-bottom: 8px; color: var(--text); }
+
+    strong { color: #ffffff; }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin: 4px 6px 4px 0;
+    }
+
+    .footer {
+      margin-top: 28px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+      margin: 32px 0;
+    }
+
+    .small {
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 14px; }
+      .hero { padding-top: 20px; }
+      .privacy-card { border-radius: 22px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <a class="back" href="index.html">← Torna al sito</a>
+
+    <section class="hero">
+      <div class="app-icon">⏳</div>
+      <h1>Informativa <span>Privacy</span></h1>
+      <p class="subtitle">
+        Informativa sul trattamento dei dati per l’app <strong>Quanti giorni mancano</strong>,
+        sviluppata da <strong>Giuseppe Maiello - Pin Soft House</strong>.
+      </p>
+    </section>
+
+    <section class="privacy-card">
+      <p class="small">
+        Ultimo aggiornamento: <strong>29 aprile 2026</strong>
+      </p>
+
+      <div class="info-box">
+        <strong>In sintesi:</strong> l’app “Quanti giorni mancano” è pensata per funzionare principalmente sul tuo dispositivo.
+        Gli eventi, le date, le note e le preferenze vengono salvati localmente sul dispositivo dell’utente.
+      </div>
+
+      <div>
+        <span class="tag">📅 Countdown</span>
+        <span class="tag">🔔 Notifiche locali</span>
+        <span class="tag">💾 Backup</span>
+        <span class="tag">🔒 Nessun account obbligatorio</span>
+      </div>
+
+      <h2>1. Titolare del trattamento</h2>
+      <p>Il titolare del trattamento dei dati è:</p>
+      <p>
+        <strong>Giuseppe Maiello - Pin Soft House</strong><br>
+        Email di contatto: <a href="mailto:giuseppe@email.com">giuseppe@email.com</a>
+      </p>
+
+      <h2>2. Dati trattati dall’app</h2>
+      <p>
+        L’app permette all’utente di creare e gestire countdown per eventi, ricorrenze e date importanti.
+        I dati inseriti possono includere:
+      </p>
+
+      <ul>
+        <li>nome dell’evento;</li>
+        <li>data dell’evento;</li>
+        <li>ora della notifica, se impostata;</li>
+        <li>eventuali note o descrizioni inserite dall’utente;</li>
+        <li>icona o emoji scelta per l’evento;</li>
+        <li>colore associato all’evento;</li>
+        <li>preferenza relativa all’attivazione o disattivazione della notifica;</li>
+        <li>impostazione di eventuale ricorrenza annuale.</li>
+      </ul>
+
+      <p>
+        Questi dati sono inseriti volontariamente dall’utente e servono esclusivamente per il funzionamento
+        delle funzionalità dell’app.
+      </p>
+
+      <h2>3. Dove vengono salvati i dati</h2>
+      <p>
+        I dati degli eventi vengono salvati localmente sul dispositivo dell’utente.
+        L’app non richiede la creazione di un account e non invia automaticamente i dati a server esterni
+        gestiti dallo sviluppatore.
+      </p>
+
+      <p>
+        Se l’utente decide di esportare o condividere un backup, il file generato viene gestito tramite le
+        funzioni di condivisione del dispositivo. In questo caso, l’utente sceglie volontariamente dove salvare
+        o inviare il file.
+      </p>
+
+      <h2>4. Finalità del trattamento</h2>
+      <p>I dati vengono utilizzati per:</p>
+
+      <ul>
+        <li>mostrare i countdown degli eventi creati dall’utente;</li>
+        <li>calcolare quanti giorni mancano a una determinata data;</li>
+        <li>gestire eventi futuri, passati e ricorrenti;</li>
+        <li>mostrare promemoria e notifiche locali;</li>
+        <li>consentire la ricerca e il filtro degli eventi;</li>
+        <li>permettere l’esportazione e l’importazione dei backup.</li>
+      </ul>
+
+      <h2>5. Notifiche</h2>
+      <p>
+        L’app può richiedere il permesso di inviare notifiche.
+        Le notifiche vengono utilizzate per ricordare all’utente gli eventi salvati nell’app.
+      </p>
+
+      <p>
+        L’utente può attivare o disattivare le notifiche per i singoli eventi direttamente dall’app, oppure
+        modificare le autorizzazioni dalle impostazioni del dispositivo.
+      </p>
+
+      <p>Le notifiche sono gestite localmente dal sistema operativo del dispositivo.</p>
+
+      <h2>6. Backup, esportazione e importazione</h2>
+      <p>
+        L’app può permettere all’utente di esportare un file di backup contenente gli eventi salvati.
+        Questo file può includere nomi eventi, date, orari, note, icone, colori e altre impostazioni associate.
+      </p>
+
+      <p>
+        L’utente è responsabile della conservazione e della condivisione del file di backup.
+        Se il file viene inviato tramite email, app di messaggistica, cloud o altri servizi esterni, il trattamento
+        dei dati dipenderà anche dalle condizioni privacy di tali servizi.
+      </p>
+
+      <h2>7. Dati condivisi con terze parti</h2>
+      <p>L’app non condivide automaticamente i dati degli eventi con terze parti.</p>
+      <p>
+        I dati possono essere condivisi con app o servizi esterni solo se l’utente sceglie volontariamente
+        di esportare, salvare o condividere un backup tramite le funzioni del dispositivo.
+      </p>
+
+      <h2>8. Permessi richiesti</h2>
+      <p>L’app può richiedere alcuni permessi necessari al corretto funzionamento:</p>
+
+      <ul>
+        <li><strong>Notifiche:</strong> per inviare promemoria relativi agli eventi salvati.</li>
+        <li><strong>Archiviazione/File:</strong> ove necessario, per creare, esportare o importare file di backup.</li>
+        <li><strong>Vibrazione:</strong> se usata dal dispositivo per accompagnare notifiche o feedback.</li>
+      </ul>
+
+      <p>I permessi possono essere modificati o revocati in qualsiasi momento dalle impostazioni del dispositivo.</p>
+
+      <h2>9. Pubblicità, analytics e tracciamento</h2>
+      <p>
+        L’app, nella configurazione descritta da questa informativa, non utilizza account obbligatori,
+        sistemi di pubblicità, profilazione o strumenti di tracciamento analytics gestiti dallo sviluppatore.
+      </p>
+
+      <p>Se in futuro venissero introdotti servizi di terze parti, questa informativa verrà aggiornata.</p>
+
+      <h2>10. Conservazione dei dati</h2>
+      <p>
+        I dati rimangono salvati sul dispositivo finché l’utente non li elimina manualmente dall’app,
+        cancella i dati dell’app o disinstalla l’applicazione.
+      </p>
+
+      <p>
+        I file di backup esportati restano sotto il controllo dell’utente e possono essere eliminati manualmente
+        dal percorso in cui sono stati salvati.
+      </p>
+
+      <h2>11. Diritti dell’utente</h2>
+      <p>
+        Poiché i dati sono salvati principalmente sul dispositivo, l’utente può gestirli direttamente dall’app.
+        In particolare può:
+      </p>
+
+      <ul>
+        <li>creare, modificare o eliminare eventi;</li>
+        <li>disattivare le notifiche per singoli eventi;</li>
+        <li>eliminare eventi passati;</li>
+        <li>cancellare i dati dell’app dalle impostazioni del dispositivo;</li>
+        <li>disinstallare l’app per rimuovere i dati locali associati.</li>
+      </ul>
+
+      <p>Per richieste o chiarimenti è possibile contattare lo sviluppatore all’indirizzo email indicato in questa informativa.</p>
+
+      <h2>12. Sicurezza</h2>
+      <p>
+        L’app è progettata per limitare il trattamento dei dati al minimo necessario per offrire le sue funzionalità.
+        L’utente è invitato a conservare con attenzione eventuali file di backup esportati, poiché possono contenere
+        informazioni personali inserite volontariamente negli eventi o nelle note.
+      </p>
+
+      <h2>13. Minori</h2>
+      <p>
+        L’app non è destinata specificamente alla raccolta di dati personali di minori.
+        Gli utenti minorenni dovrebbero utilizzare l’app con il consenso o la supervisione di un genitore
+        o di chi ne esercita la responsabilità.
+      </p>
+
+      <h2>14. Modifiche a questa informativa</h2>
+      <p>
+        Questa informativa può essere aggiornata in caso di modifiche all’app, alle sue funzionalità o ai servizi utilizzati.
+        La versione aggiornata sarà resa disponibile attraverso la pagina dell’app o altri canali appropriati.
+      </p>
+
+      <div class="divider"></div>
+
+      <h2>Contatti</h2>
+      <p>Per domande relative alla privacy dell’app puoi contattare:</p>
+
+      <p>
+        <strong>Giuseppe Maiello - Pin Soft House</strong><br>
+        Email: <a href="mailto:giuseppe@email.com">giuseppe@email.com</a>
+      </p>
+
+      <p class="footer">
+        © 2026 Giuseppe Maiello - Pin Soft House<br>
+        App: <strong>Quanti giorni mancano</strong>
+      </p>
+    </section>
+  </main>
+</body>
+</html>

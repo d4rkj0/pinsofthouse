@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informativa Privacy - First Player</title>
+  <style>
+    :root {
+      --bg: #0d0b24;
+      --card: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.14);
+      --text: #f8f5ff;
+      --muted: #c8bfdc;
+      --gold: #ffd166;
+      --orange: #ff9f43;
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 209, 102, 0.22), transparent 28%),
+        radial-gradient(circle at top right, rgba(155, 92, 255, 0.28), transparent 30%),
+        linear-gradient(145deg, #0a0820, #151036 55%, #09071d);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 24px;
+    }
+    .page { max-width: 900px; margin: 0 auto; }
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      margin-bottom: 24px;
+    }
+    .hero { text-align: center; padding: 30px 20px 28px; }
+    .app-icon {
+      width: 82px;
+      height: 82px;
+      border-radius: 24px;
+      margin: 0 auto 18px;
+      display: grid;
+      place-items: center;
+      font-size: 42px;
+      background: linear-gradient(145deg, rgba(255, 209, 102, 0.95), rgba(255, 159, 67, 0.95));
+      box-shadow: 0 20px 45px rgba(255, 159, 67, 0.25);
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+    h1 span { color: var(--gold); }
+    .subtitle {
+      max-width: 720px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: clamp(22px, 4vw, 42px);
+      box-shadow: 0 28px 80px var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+    .box {
+      border-radius: 22px;
+      padding: 18px 20px;
+      margin: 20px 0 30px;
+      background: rgba(255, 209, 102, 0.12);
+      border: 1px solid rgba(255, 209, 102, 0.25);
+      color: #fff8dc;
+    }
+    h2 {
+      margin-top: 34px;
+      margin-bottom: 10px;
+      font-size: 1.45rem;
+      color: var(--gold);
+      letter-spacing: -0.02em;
+    }
+    p { margin: 0 0 14px; }
+    ul { padding-left: 22px; }
+    li { margin-bottom: 8px; }
+    strong { color: white; }
+    a { color: var(--gold); text-decoration: none; font-weight: 700; }
+    a:hover { text-decoration: underline; }
+    .footer {
+      margin-top: 28px;
+      text-align: center;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    .small { color: var(--muted); font-size: .94rem; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a class="back" href="index.html">← Torna al sito</a>
+
+    <section class="hero">
+      <div class="app-icon">👆</div>
+      <h1>Informativa <span>Privacy</span></h1>
+      <p class="subtitle">
+        Informativa sul trattamento dei dati per l’app <strong>First Player</strong>,
+        sviluppata da <strong>Giuseppe Maiello - Pin Soft House</strong>.
+      </p>
+    </section>
+
+    <section class="card">
+      <p class="small">Ultimo aggiornamento: <strong>29 aprile 2026</strong></p>
+
+      <div class="box">
+        <strong>In sintesi:</strong> First Player funziona principalmente sul dispositivo e serve a scegliere casualmente il primo giocatore. Non richiede account e non invia automaticamente dati a server esterni.
+      </div>
+
+      <h2>1. Titolare del trattamento</h2>
+      <p>
+        <strong>Giuseppe Maiello - Pin Soft House</strong><br>
+        Email di contatto: <a href="mailto:giuseppe@email.com">giuseppe@email.com</a>
+      </p>
+
+      <h2>2. Dati trattati dall’app</h2>
+      <p>
+        L’app tratta solo i dati necessari al funzionamento delle funzionalità offerte.
+        Le informazioni vengono gestite principalmente sul dispositivo dell’utente.
+      </p>
+
+      <h2>3. Finalità</h2>
+      <p>
+        I dati vengono utilizzati per consentire all’app di funzionare correttamente, salvare preferenze locali
+        e offrire all’utente le funzionalità previste.
+      </p>
+
+      
+      <h2>Permessi e funzionalità</h2>
+      <ul>
+        <li><strong>Vibrazione:</strong> può essere usata per feedback durante la selezione del giocatore.</li>
+        <li><strong>Interazione touch:</strong> l’app rileva i tocchi sullo schermo per eseguire la selezione casuale.</li>
+      </ul>
+    
+
+      <h2>4. Dati condivisi con terze parti</h2>
+      <p>
+        L’app non condivide automaticamente dati personali con terze parti, salvo azioni volontarie dell’utente
+        tramite funzioni di condivisione del dispositivo o servizi esterni scelti dall’utente.
+      </p>
+
+      <h2>5. Conservazione dei dati</h2>
+      <p>
+        I dati rimangono salvati sul dispositivo finché l’utente non li elimina dall’app, cancella i dati
+        dell’app dalle impostazioni del dispositivo o disinstalla l’app.
+      </p>
+
+      <h2>6. Diritti dell’utente</h2>
+      <p>
+        L’utente può gestire o eliminare i dati locali direttamente dall’app o dalle impostazioni del dispositivo.
+        Per richieste o chiarimenti è possibile contattare lo sviluppatore all’indirizzo indicato.
+      </p>
+
+      <h2>7. Modifiche a questa informativa</h2>
+      <p>
+        Questa informativa può essere aggiornata in caso di modifiche all’app, alle sue funzionalità o ai servizi utilizzati.
+      </p>
+
+      <p class="footer">
+        © 2026 Giuseppe Maiello - Pin Soft House<br>
+        App: <strong>First Player</strong>
+      </p>
+    </section>
+  </main>
+</body>
+</html>
