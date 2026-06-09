@@ -652,12 +652,18 @@
       text-align: center;
     }
 
-
     .coming-grid {
       display: grid;
-      grid-template-columns: .95fr 1.05fr;
+      grid-template-columns: minmax(280px, .92fr) minmax(300px, 1.08fr);
       gap: 18px;
       align-items: stretch;
+    }
+
+    .coming-left {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 18px;
+      min-height: 100%;
     }
 
     .coming-card {
@@ -667,6 +673,25 @@
       border: 1px solid var(--border);
       box-shadow: 0 20px 70px rgba(0,0,0,.18);
       backdrop-filter: blur(16px);
+    }
+
+    .coming-hero-image {
+      padding: 14px;
+    }
+
+    .coming-hero-image img,
+    .coming-side-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 18px 48px rgba(0,0,0,.25);
+    }
+
+    .coming-hero-image img {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
     }
 
     .coming-info {
@@ -719,30 +744,17 @@
       font-weight: 800;
     }
 
-    .coming-media {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
+    .coming-side-image {
       padding: 14px;
+      display: flex;
+      align-items: stretch;
+      min-height: 100%;
     }
 
-    .coming-media img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,.14);
-      box-shadow: 0 18px 48px rgba(0,0,0,.25);
-    }
-
-    .coming-media img:first-child {
-      aspect-ratio: 1 / 1;
+    .coming-side-image img {
+      height: 100%;
+      min-height: 100%;
       object-fit: cover;
-    }
-
-    .coming-media img:last-child {
-      max-height: 520px;
-      object-fit: contain;
       background: rgba(0,0,0,.18);
     }
 
@@ -760,8 +772,17 @@
         transform: none;
       }
 
-      .grid, .apps-grid, .privacy-list {
+      .grid, .apps-grid, .privacy-list, .coming-grid {
         grid-template-columns: 1fr;
+      }
+
+      .coming-left {
+        grid-template-rows: auto auto;
+      }
+
+      .coming-side-image img {
+        height: auto;
+        min-height: 0;
       }
 
       .section-head {
@@ -824,6 +845,16 @@
         width: 64px;
         height: 64px;
       }
+
+      .coming-hero-image,
+      .coming-side-image {
+        padding: 12px;
+      }
+
+      .coming-info {
+        padding: 20px;
+      }
+
     }
   </style>
 </head>
@@ -1036,7 +1067,6 @@
         </article>
       </div>
     </section>
-
     <section class="wrap" id="coming-soon">
       <div class="section-head">
         <div>
@@ -1049,24 +1079,29 @@
       </div>
 
       <div class="coming-grid">
-        <article class="coming-card coming-info">
-          <span class="coming-tag">In sviluppo</span>
-          <h3>Dungeon Thirteen</h3>
-          <p>
-            Un tactical card game di rischio e strategia: piazza le carte nei reami giusti,
-            controlla le maggioranze e fai attenzione a non superare il limite di 13.
-          </p>
+        <div class="coming-left">
+          <article class="coming-card coming-hero-image" aria-label="Immagine principale di Dungeon Thirteen">
+            <img src="splash-13.png" alt="Dungeon Thirteen - immagine principale" />
+          </article>
 
-          <div class="coming-features" aria-label="Caratteristiche di Dungeon Thirteen">
-            <span>🃏 Gioco di carte tattico</span>
-            <span>🏰 Tre reami da controllare</span>
-            <span>💀 Non superare 13</span>
-            <span>🏆 Vince il punteggio più basso</span>
-          </div>
-        </article>
+          <article class="coming-card coming-info">
+            <span class="coming-tag">In sviluppo</span>
+            <h3>Dungeon Thirteen</h3>
+            <p>
+              Un tactical card game di rischio e strategia: piazza le carte nei reami giusti,
+              controlla le maggioranze e fai attenzione a non superare il limite di 13.
+            </p>
 
-        <article class="coming-card coming-media" aria-label="Immagini di Dungeon Thirteen">
-          <img src="splash-13.png" alt="Dungeon Thirteen - immagine principale" />
+            <div class="coming-features" aria-label="Caratteristiche di Dungeon Thirteen">
+              <span>🃏 Gioco di carte tattico</span>
+              <span>🏰 Tre reami da controllare</span>
+              <span>💀 Non superare 13</span>
+              <span>🏆 Vince il punteggio più basso</span>
+            </div>
+          </article>
+        </div>
+
+        <article class="coming-card coming-side-image" aria-label="Schermate promozionali di Dungeon Thirteen">
           <img src="dungeon-thirteen-screen.png" alt="Dungeon Thirteen - schermate promozionali" />
         </article>
       </div>
