@@ -880,6 +880,49 @@
       }
     }
 
+    /* Rende l'intero link un contenitore flessibile e allineato */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px; /* Spazio tra il logo e il testo */
+  text-decoration: none;
+  color: #333; /* Cambialo con il colore del tuo brand */
+}
+
+/* Gestione del contenitore del logo */
+.brand .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;  /* Larghezza del quadratino del logo */
+  height: 45px; /* Altezza del quadratino del logo */
+  overflow: hidden;
+  border-radius: 8px; /* Opzionale: arrotonda leggermente gli angoli del logo */
+}
+
+/* Controllo accurato dell'immagine del logo */
+.brand .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Mantiene le proporzioni senza tagliare l'immagine */
+}
+
+/* Gestione dei testi (Nome e Small) */
+.brand span:not(.logo) {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.brand small {
+  display: block;
+  font-weight: normal;
+  font-size: 0.8rem;
+  color: #666; /* Colore più tenue per il sottotitolo */
+}
+
   </style>
 </head>
 
