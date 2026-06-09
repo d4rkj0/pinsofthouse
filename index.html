@@ -652,6 +652,100 @@
       text-align: center;
     }
 
+
+    .coming-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .coming-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 70px rgba(0,0,0,.18);
+      backdrop-filter: blur(16px);
+    }
+
+    .coming-info {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .coming-info h3 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      line-height: 1;
+      letter-spacing: -.055em;
+    }
+
+    .coming-info p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .coming-tag {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 16px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #ffe6a3;
+      background: rgba(255,209,102,.13);
+      border: 1px solid rgba(255,209,102,.30);
+      font-weight: 900;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+
+    .coming-features {
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .coming-features span {
+      display: block;
+      padding: 11px 13px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .coming-media {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 14px;
+    }
+
+    .coming-media img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 18px 48px rgba(0,0,0,.25);
+    }
+
+    .coming-media img:first-child {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .coming-media img:last-child {
+      max-height: 520px;
+      object-fit: contain;
+      background: rgba(0,0,0,.18);
+    }
+
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
@@ -749,7 +843,7 @@
         <a href="#progetti">Progetti</a>
         <a href="#app">App</a>
         <a href="player-picker.html">Player Picker</a>
-        <a href="#privacy">Privacy</a>
+        <a href="#coming-soon">Coming Soon</a>
         <a href="#supporto">Supporto</a>
       </nav>
     </div>
@@ -767,7 +861,7 @@
 
         <div class="hero-actions">
           <a class="btn btn-primary" href="#app">Vedi le app</a>
-          <a class="btn btn-secondary" href="#privacy">Privacy Policy</a>
+          <a class="btn btn-secondary" href="#coming-soon">Coming Soon</a>
         </div>
       </div>
 
@@ -943,40 +1037,42 @@
       </div>
     </section>
 
-    <section class="wrap" id="privacy">
+    <section class="wrap" id="coming-soon">
       <div class="section-head">
         <div>
-          <h2>Privacy Policy</h2>
+          <h2>Coming Soon</h2>
           <p>
-            Le informative sono separate per app, così ogni prodotto ha una pagina chiara e coerente con le sue funzionalità.
+            Nuovi progetti sono in lavorazione. Il prossimo gioco in arrivo è un’esperienza dark fantasy
+            fatta di carte, rischio e controllo dei reami.
           </p>
         </div>
       </div>
 
-      <div class="privacy-list">
-        <a class="link-tile" href="privacy-quanti-giorni-mancano.html">
-          <b>Quanti giorni mancano</b>
-          <span>Countdown, notifiche locali, backup e importazione eventi.</span>
-        </a>
+      <div class="coming-grid">
+        <article class="coming-card coming-info">
+          <span class="coming-tag">In sviluppo</span>
+          <h3>Dungeon Thirteen</h3>
+          <p>
+            Un tactical card game di rischio e strategia: piazza le carte nei reami giusti,
+            controlla le maggioranze e fai attenzione a non superare il limite di 13.
+          </p>
 
-        <a class="link-tile" href="privacy-first-player.html">
-          <b>Player Picker</b>
-          <span>Selezione casuale del primo giocatore e utilizzo locale dell’app.</span>
-        </a>
+          <div class="coming-features" aria-label="Caratteristiche di Dungeon Thirteen">
+            <span>🃏 Gioco di carte tattico</span>
+            <span>🏰 Tre reami da controllare</span>
+            <span>💀 Non superare 13</span>
+            <span>🏆 Vince il punteggio più basso</span>
+          </div>
+        </article>
 
-        <a class="link-tile" href="privacy-geopin.html">
-          <b>GeoPin</b>
-          <span>Posizione del dispositivo, coordinate salvate e dati locali.</span>
-        </a>
-
-        <a class="link-tile" href="privacy-the-dice-tavern.html">
-          <b>The Dice Tavern</b>
-          <span>Lanci di dadi digitali e preferenze locali.</span>
-        </a>
+        <article class="coming-card coming-media" aria-label="Immagini di Dungeon Thirteen">
+          <img src="splash-13.png" alt="Dungeon Thirteen - immagine principale" />
+          <img src="dungeon-thirteen-screen.png" alt="Dungeon Thirteen - schermate promozionali" />
+        </article>
       </div>
     </section>
 
-    <section class="wrap" id="supporto">
+<section class="wrap" id="supporto">
       <div class="section-head">
         <div>
           <h2>Supporto</h2>
