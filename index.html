@@ -757,6 +757,309 @@
       background: rgba(0,0,0,.18);
     }
 
+
+    .android-board {
+      width: min(430px, 92vw);
+      border-radius: 34px;
+      padding: 22px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(53, 211, 153, .25), transparent 34%),
+        radial-gradient(circle at 88% 18%, rgba(34, 211, 238, .24), transparent 30%),
+        linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.045));
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 34px 90px var(--shadow);
+      backdrop-filter: blur(18px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .android-board::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -92px;
+      bottom: -92px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(53, 211, 153, .18), transparent 65%);
+      pointer-events: none;
+    }
+
+    .android-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 18px;
+    }
+
+    .android-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      font-size: 38px;
+      background: linear-gradient(145deg, #35d399, #22d3ee);
+      color: #061b18;
+      box-shadow: 0 18px 44px rgba(53, 211, 153, .24);
+      border: 1px solid rgba(255,255,255,.22);
+      flex: 0 0 auto;
+    }
+
+    .android-top h2 {
+      margin: 0;
+      font-size: clamp(1.35rem, 3vw, 1.95rem);
+      line-height: 1.05;
+      letter-spacing: -.045em;
+    }
+
+    .android-top p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-weight: 750;
+      font-size: .94rem;
+    }
+
+    .store-strip {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border-radius: 22px;
+      background: rgba(0,0,0,.22);
+      border: 1px solid rgba(255,255,255,.12);
+      margin-bottom: 14px;
+    }
+
+    .store-strip strong {
+      display: block;
+      color: #b9f8df;
+      font-size: 1rem;
+      line-height: 1.15;
+    }
+
+    .store-strip span {
+      display: block;
+      color: var(--muted);
+      font-size: .82rem;
+      margin-top: 3px;
+    }
+
+    .play-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--gold), var(--orange));
+      color: #1c1203;
+      font-weight: 950;
+      font-size: 1.5rem;
+      box-shadow: 0 14px 34px rgba(255,159,67,.20);
+    }
+
+    .android-process {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .android-process-card {
+      min-height: 104px;
+      padding: 14px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.075);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
+    .android-process-card span {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.10);
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .android-process-card b {
+      display: block;
+      line-height: 1.1;
+      font-size: .94rem;
+    }
+
+    .android-process-card small {
+      display: block;
+      color: var(--muted);
+      margin-top: 5px;
+      font-weight: 750;
+      line-height: 1.35;
+    }
+
+    .android-app-list {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 10px;
+    }
+
+    .android-app {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 11px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.075);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
+    .android-app img {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .android-app b {
+      display: block;
+      line-height: 1.1;
+      font-size: .94rem;
+    }
+
+    .android-app small {
+      display: block;
+      color: var(--muted);
+      margin-top: 3px;
+      font-weight: 750;
+    }
+
+    .android-pill {
+      white-space: nowrap;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: .68rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,.13);
+      color: var(--muted);
+    }
+
+    .android-pill.live {
+      color: #b9f8df;
+      background: rgba(53,211,153,.13);
+      border-color: rgba(53,211,153,.28);
+    }
+
+    .android-pill.beta {
+      color: #ffe6a3;
+      background: rgba(255,209,102,.12);
+      border-color: rgba(255,209,102,.26);
+    }
+
+    .android-actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 520px) {
+      .android-board {
+        padding: 16px;
+      }
+
+      .store-strip,
+      .android-app {
+        grid-template-columns: auto 1fr;
+      }
+
+      .play-mark,
+      .android-pill {
+        grid-column: 1 / -1;
+        justify-self: start;
+      }
+    }
+
+
+    .hero-header {
+      padding: 38px 0 34px;
+    }
+
+    .hero-cover {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 34px 90px rgba(0,0,0,.28);
+      background: rgba(255,255,255,.06);
+    }
+
+    .hero-cover img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-cover-actions {
+      position: absolute;
+      left: 22px;
+      bottom: 22px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      z-index: 2;
+    }
+
+    .hero-cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(to top, rgba(9,7,29,.42), transparent 42%);
+    }
+
+    @media (max-width: 720px) {
+      .hero-header {
+        padding: 22px 0 24px;
+      }
+
+      .hero-cover {
+        border-radius: 24px;
+      }
+
+      .hero-cover-actions {
+        position: static;
+        padding: 14px;
+        background: rgba(9,7,29,.46);
+      }
+
+      .hero-cover::after {
+        display: none;
+      }
+
+      .hero-cover-actions .btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-cover {
+        border-radius: 18px;
+      }
+    }
+
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
@@ -875,84 +1178,12 @@
   </header>
 
   <main id="top">
-    <section class="wrap hero">
-      <div>
-        <span class="eyebrow">✨ App, utility e giochi digitali indipendenti</span>
-        <h1>Creo esperienze digitali <span>semplici e curate.</span></h1>
-        <p class="lead">
-          Pin Soft House è il progetto indipendente di Giuseppe Maiello: un piccolo spazio creativo dedicato ad app per smartphone,
-          utility leggere e giochi digitali pensati per essere utili, immediati e piacevoli da usare.
-        </p>
-
-        <div class="hero-actions">
+    <section class="wrap hero-header" id="top">
+      <div class="hero-cover">
+        <img src="intestazione_sviluppatore.jpg" alt="Pin Soft House - Giuseppe Maiello" />
+        <div class="hero-cover-actions">
           <a class="btn btn-primary" href="#app">Vedi le app</a>
           <a class="btn btn-secondary" href="#coming-soon">Coming Soon</a>
-        </div>
-      </div>
-
-      <div class="showcase" aria-hidden="true">
-        <div class="orb one"></div>
-        <div class="orb two"></div>
-
-        <div class="device">
-          <div class="screen">
-            <div class="screen-title">
-              <div>
-                <h2>Quanti giorni<br>mancano</h2>
-              </div>
-              <div class="plus">+</div>
-            </div>
-
-            <div class="stats">
-              <div class="stat"><b>8</b><span>Eventi</span></div>
-              <div class="stat"><b>2</b><span>Settimana</span></div>
-              <div class="stat"><b>1</b><span>Oggi</span></div>
-            </div>
-
-            <div class="search">🔎 Cerca evento...</div>
-
-            <div class="chips">
-              <span class="chip active">Tutti</span>
-              <span class="chip">Oggi</span>
-              <span class="chip">Annuali</span>
-            </div>
-
-            <div class="event">
-              <div class="emoji">🎂</div>
-              <div>
-                <h3>Compleanno</h3>
-                <p>24 maggio • 18:00</p>
-              </div>
-              <div class="days"><b>12</b><span>giorni</span></div>
-            </div>
-
-            <div class="event">
-              <div class="emoji">✈️</div>
-              <div>
-                <h3>Viaggio</h3>
-                <p>3 giugno • 08:00</p>
-              </div>
-              <div class="days"><b>22</b><span>giorni</span></div>
-            </div>
-
-            <div class="event">
-              <div class="emoji">🎲</div>
-              <div>
-                <h3>Serata giochi</h3>
-                <p>14 giugno • 20:30</p>
-              </div>
-              <div class="days"><b>33</b><span>giorni</span></div>
-            </div>
-
-            <div class="event">
-              <div class="emoji">🔔</div>
-              <div>
-                <h3>Promemoria</h3>
-                <p>Notifiche attive</p>
-              </div>
-              <div class="days"><b>ON</b><span></span></div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
