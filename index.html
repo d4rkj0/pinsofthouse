@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pin Soft House - Giuseppe Maiello</title>
   <meta name="description" content="Pin Soft House è il progetto indipendente di Giuseppe Maiello: app, utility e piccoli giochi digitali per smartphone." />
-  <link rel="icon" type="image/jpeg" href="player-picker-logo.jpg" />
 
   <style>
     :root {
@@ -513,6 +512,35 @@
       display: block;
     }
 
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin: 8px 0 10px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: .73rem;
+      font-weight: 900;
+      letter-spacing: .01em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, .14);
+      background: rgba(255, 255, 255, .08);
+      color: var(--muted);
+    }
+
+    .status-badge.production {
+      background: rgba(53, 211, 153, .14);
+      border-color: rgba(53, 211, 153, .30);
+      color: #b9f8df;
+    }
+
+    .status-badge.beta {
+      background: rgba(255, 209, 102, .13);
+      border-color: rgba(255, 209, 102, .30);
+      color: #ffe6a3;
+    }
+
+
     .app-card h3 {
       margin: 0 0 6px;
       font-size: 1.3rem;
@@ -842,9 +870,10 @@
 
       <div class="apps-grid">
         <article class="app-card" style="--glow: rgba(255, 209, 102, .22)">
-          <div class="app-badge">⏳</div>
+          <div class="app-badge"><img src="quanti-giorni.png" alt="Icona Quanti giorni mancano" /></div>
           <div>
             <h3>Quanti giorni mancano</h3>
+            <span class="status-badge beta">Beta test</span>
             <p>
               Countdown personalizzati per eventi, compleanni, viaggi, anniversari, scadenze e ricorrenze.
               Con icone, colori, note, notifiche e backup.
@@ -856,9 +885,10 @@
         </article>
 
         <article class="app-card" style="--glow: rgba(34, 211, 238, .20)">
-          <div class="app-badge"><img src="player-picker-logo.jpg" alt="Logo di Player Picker" /></div>
+          <div class="app-badge"><img src="player-picker-logo.jpg" alt="Icona Player Picker" /></div>
           <div>
             <h3>Player Picker</h3>
+            <span class="status-badge production">In produzione</span>
             <p>
               Un’app semplice e divertente per scegliere il primo giocatore: i partecipanti appoggiano il dito
               sullo schermo e l’app seleziona casualmente chi inizia.
@@ -872,9 +902,10 @@
         </article>
 
         <article class="app-card" style="--glow: rgba(53, 211, 153, .20)">
-          <div class="app-badge">📍</div>
+          <div class="app-badge"><img src="geo-pin.png" alt="Icona GeoPin" /></div>
           <div>
             <h3>GeoPin</h3>
+            <span class="status-badge beta">Beta test</span>
             <p>
               Salva e ritrova posizioni importanti usando le coordinate del dispositivo. Utile per ricordare
               luoghi, parcheggi e punti di interesse personali.
@@ -886,9 +917,10 @@
         </article>
 
         <article class="app-card" style="--glow: rgba(255, 92, 138, .20)">
-          <div class="app-badge">🎲</div>
+          <div class="app-badge"><img src="dice-tavern.png" alt="Icona The Dice Tavern" /></div>
           <div>
             <h3>The Dice Tavern</h3>
+            <span class="status-badge beta">Beta test</span>
             <p>
               Un’app per lanciare dadi digitali pensata per giocatori da tavolo e giochi di ruolo:
               rapida, scenografica e sempre a portata di mano.
@@ -945,7 +977,7 @@
       </div>
 
       <article class="support-card">
-        <div class="ico">✉️</div>
+        <div class="ico">✉️</div> 
         <div>
           <h3>Contatto sviluppatore</h3>
           <p>
