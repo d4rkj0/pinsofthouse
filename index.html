@@ -581,6 +581,43 @@
       border: 1px solid rgba(255,209,102,.24);
     }
 
+
+    .app-qr {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: center;
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 20px;
+      background: rgba(0,0,0,.18);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .app-qr img {
+      width: 96px;
+      height: 96px;
+      border-radius: 12px;
+      background: #fff;
+      padding: 6px;
+      display: block;
+    }
+
+    .app-qr b {
+      display: block;
+      color: var(--gold);
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+
+    .app-qr span {
+      display: block;
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.35;
+    }
+
     .privacy-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -1143,6 +1180,16 @@
         height: 64px;
       }
 
+
+      .app-qr {
+        grid-template-columns: 1fr;
+      }
+
+      .app-qr img {
+        width: 112px;
+        height: 112px;
+      }
+
       .coming-hero-image,
       .coming-side-image {
         padding: 12px;
@@ -1262,17 +1309,26 @@
         </article>
 
         <article class="app-card" style="--glow: rgba(53, 211, 153, .20)">
-          <div class="app-badge"><img src="geo-pin.png" alt="Icona GeoPin" /></div>
+          <div class="app-badge"><img src="geo-pin.png" alt="Icona Geo Pin" /></div>
           <div>
             <h3>Geo Pin</h3>
-            <span class="status-badge beta">Beta test</span>
+            <span class="status-badge production">In produzione</span>
             <p>
-              Salva e ritrova posizioni importanti usando le coordinate del dispositivo. Utile per ricordare
-              luoghi, parcheggi e punti di interesse personali.
+              Un’app pratica per salvare, organizzare, ritrovare e condividere punti d’interesse usando la posizione
+              del dispositivo. Supporta coordinate GPS, indirizzi leggibili quando disponibili, categorie personalizzate,
+              esportazione/importazione dei dati e condivisione tramite app di messaggistica o link compatibili con Google Maps.
             </p>
           </div>
           <div class="app-links">
-            <a class="mini-link" onclick="event.preventDefault();" href="privacy-geopin.html">Privacy Policy</a>
+            <a class="mini-link" href="https://play.google.com/store/apps/details?id=pin.soft.housegeopin" target="_blank" rel="noopener noreferrer">Google Play</a>
+            <a class="mini-link" href="privacy-geopin.html">Privacy Policy</a>
+          </div>
+          <div class="app-qr" aria-label="QR code per aprire Geo Pin su Google Play">
+            <img src="qr-geopin-google-play.png" alt="QR code Geo Pin su Google Play" />
+            <div>
+              <b>Scansiona il QR code</b>
+              <span>Apri direttamente la scheda di Geo Pin su Google Play dal tuo smartphone.</span>
+            </div>
           </div>
         </article>
 
