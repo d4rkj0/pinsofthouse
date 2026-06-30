@@ -923,6 +923,42 @@
   color: #666; /* Colore più tenue per il sottotitolo */
 }
 
+    .play-badge-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 0;
+      border-radius: 10px;
+      transition: transform .16s ease, filter .16s ease;
+    }
+
+    .play-badge-link:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .google-play-badge {
+      display: block;
+      height: 58px;
+      width: auto;
+      max-width: 100%;
+    }
+
+    .cta-band .google-play-badge {
+      height: 62px;
+    }
+
+    @media (max-width: 620px) {
+      .play-badge-link {
+        width: 100%;
+      }
+
+      .google-play-badge {
+        height: auto;
+        width: min(240px, 100%);
+      }
+    }
+
   </style>
 </head>
 
@@ -958,7 +994,7 @@
         </p>
 
         <div class="article-actions">
-          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.pinsofthouse.firstplayer" target="_blank" rel="noopener noreferrer">Download on Google Play</a>
+          <a class="play-badge-link" href="https://play.google.com/store/apps/details?id=com.pinsofthouse.firstplayer" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play"><img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" /></a>
           <a class="btn btn-secondary" href="#immagini">View screenshots</a>
           <a class="btn btn-secondary" href="player-picker.html" hreflang="it" aria-label="Switch to the Italian version">Italian version</a>
         </div>
@@ -1061,7 +1097,7 @@
           Download Player Picker and keep it handy for your next game night.
         </p>
         <div class="article-actions">
-          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.pinsofthouse.firstplayer" target="_blank" rel="noopener noreferrer">Open Google Play</a>
+          <a class="play-badge-link" href="https://play.google.com/store/apps/details?id=com.pinsofthouse.firstplayer" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play"><img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" /></a>
           <a class="btn btn-secondary" href="privacy-first-player.html">Privacy Policy</a>
           <a class="btn btn-secondary" href="index.html">Back to home</a>
         </div>
