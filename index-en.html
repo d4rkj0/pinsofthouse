@@ -6,6 +6,17 @@
   <title>Pin Soft House - Giuseppe Maiello</title>
   <link rel="icon" type="image/png" href="icona_sviluppatore.png" />
   <meta name="description" content="Pin Soft House is Giuseppe Maiello’s independent project: apps, utilities, and small digital games for smartphones." />
+  <meta name="keywords" content="Pin Soft House, Giuseppe Maiello, Geo Pin, GeoPin, parking app, save location, points of interest, Player Picker, first player chooser, board games, Android app" />
+  <meta name="author" content="Giuseppe Maiello - Pin Soft House" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://d4rkj0.github.io/pinsofthouse/index-en.html" />
+  <link rel="alternate" hreflang="it" href="https://d4rkj0.github.io/pinsofthouse/" />
+  <link rel="alternate" hreflang="en" href="https://d4rkj0.github.io/pinsofthouse/index-en.html" />
+  <meta property="og:title" content="Pin Soft House - Independent Android apps" />
+  <meta property="og:description" content="Pin Soft House collects independent Android apps, practical utilities, and small digital games developed by Giuseppe Maiello." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://d4rkj0.github.io/pinsofthouse/index-en.html" />
+  <meta property="og:image" content="https://d4rkj0.github.io/pinsofthouse/icona_sviluppatore.png" />
 
   <style>
     :root {
@@ -1229,6 +1240,20 @@
         min-height: 0;
       }
 
+      .app-card-store .play-badge-link {
+        flex: 0 0 100%;
+        justify-content: center;
+      }
+
+      .app-card-store .mini-link {
+        flex: 1 1 calc(50% - 5px);
+        text-align: center;
+      }
+
+      .app-card-store .play-badge-link img {
+        height: 44px;
+      }
+
       .coming-hero-image,
       .coming-side-image {
         padding: 12px;
@@ -1238,6 +1263,12 @@
         padding: 20px;
       }
 
+    }
+
+    @media (max-width: 380px) {
+      .app-card-store .mini-link {
+        flex-basis: 100%;
+      }
     }
   </style>
 </head>
@@ -1256,7 +1287,6 @@
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#progetti">Projects</a>
         <a href="#app">App</a>
-        <a href="player-picker.html">Player Picker</a>
         <a href="#coming-soon">Coming Soon</a>
         <a href="#supporto">Support</a>
         <a href="index.html">IT</a>
