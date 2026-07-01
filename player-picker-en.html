@@ -858,6 +858,10 @@
         max-width: 560px;
         margin: 0 auto;
       }
+
+      .article-actions {
+        justify-content: center;
+      }
     }
 
     @media (max-width: 620px) {
@@ -875,53 +879,104 @@
         margin-right: auto;
       }
 
-      .article-actions .btn {
+      .article-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .article-actions .btn,
+      .play-badge-link {
         width: 100%;
+      }
+
+      .play-badge-link {
+        justify-content: center;
       }
     }
 
-    /* Rende l'intero link un contenitore flessibile e allineato */
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px; /* Spazio tra il logo e il testo */
-  text-decoration: none;
-  color: #333; /* Cambialo con il colore del tuo brand */
-}
+    @media (max-width: 460px) {
+      .wrap {
+        width: min(100% - 20px, 1120px);
+      }
 
-/* Gestione del contenitore del logo */
-.brand .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 45px;  /* Larghezza del quadratino del logo */
-  height: 45px; /* Altezza del quadratino del logo */
-  overflow: hidden;
-  border-radius: 8px; /* Opzionale: arrotonda leggermente gli angoli del logo */
-}
+      .hero,
+      .article-hero {
+        padding-top: 32px;
+      }
 
-/* Controllo accurato dell'immagine del logo */
-.brand .logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Mantiene le proporzioni senza tagliare l'immagine */
-}
+      .steps,
+      .split {
+        grid-template-columns: 1fr;
+      }
 
-/* Gestione dei testi (Nome e Small) */
-.brand span:not(.logo) {
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
-  font-size: 1.1rem;
-  line-height: 1.2;
-}
+      .feature,
+      .article-card,
+      .app-card,
+      .support-card {
+        padding: 18px;
+      }
 
-.brand small {
-  display: block;
-  font-weight: normal;
-  font-size: 0.8rem;
-  color: #666; /* Colore più tenue per il sottotitolo */
-}
+      .brand span:not(.logo) {
+        font-size: .95rem;
+      }
+
+      .brand small {
+        font-size: .72rem;
+      }
+
+      .nav-links a {
+        font-size: .8rem;
+        padding: 7px 10px;
+      }
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #333;
+      min-width: 0;
+    }
+
+    .brand .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      overflow: hidden;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .brand .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand span:not(.logo) {
+      display: flex;
+      flex-direction: column;
+      font-weight: 800;
+      font-size: 1.1rem;
+      line-height: 1.2;
+      min-width: 0;
+    }
+
+    .brand small {
+      display: block;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
 
     .play-badge-link {
       display: inline-flex;
@@ -930,6 +985,7 @@
       line-height: 0;
       border-radius: 10px;
       transition: transform .16s ease, filter .16s ease;
+      max-width: 100%;
     }
 
     .play-badge-link:hover {
@@ -937,26 +993,18 @@
       filter: brightness(1.08);
     }
 
+    .play-badge-link img,
     .google-play-badge {
       display: block;
-      height: 58px;
-      width: auto;
-      max-width: 100%;
+      width: min(240px, 100%);
+      height: auto;
+      max-height: 58px;
+      object-fit: contain;
     }
 
+    .cta-band .play-badge-link img,
     .cta-band .google-play-badge {
-      height: 62px;
-    }
-
-    @media (max-width: 620px) {
-      .play-badge-link {
-        width: 100%;
-      }
-
-      .google-play-badge {
-        height: auto;
-        width: min(240px, 100%);
-      }
+      max-height: 62px;
     }
 
   </style>
