@@ -1,34 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://d4rkj0.github.io/pinsofthouse/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://d4rkj0.github.io/pinsofthouse/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://d4rkj0.github.io/pinsofthouse/index-en.html" />
   </url>
   <url>
     <loc>https://d4rkj0.github.io/pinsofthouse/index-en.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://d4rkj0.github.io/pinsofthouse/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://d4rkj0.github.io/pinsofthouse/index-en.html" />
   </url>
   <url>
     <loc>https://d4rkj0.github.io/pinsofthouse/geopin.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://d4rkj0.github.io/pinsofthouse/geopin.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://d4rkj0.github.io/pinsofthouse/geopin-en.html" />
   </url>
   <url>
     <loc>https://d4rkj0.github.io/pinsofthouse/geopin-en.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://d4rkj0.github.io/pinsofthouse/geopin.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://d4rkj0.github.io/pinsofthouse/geopin-en.html" />
   </url>
   <url>
     <loc>https://d4rkj0.github.io/pinsofthouse/player-picker.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://d4rkj0.github.io/pinsofthouse/player-picker.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://d4rkj0.github.io/pinsofthouse/player-picker-en.html" />
   </url>
   <url>
     <loc>https://d4rkj0.github.io/pinsofthouse/player-picker-en.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://d4rkj0.github.io/pinsofthouse/player-picker.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://d4rkj0.github.io/pinsofthouse/player-picker-en.html" />
   </url>
 </urlset>
