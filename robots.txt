@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://d4rkj0.github.io/pinsofthouse/sitemap.xml
