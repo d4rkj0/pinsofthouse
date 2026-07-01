@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeoPin Pin Creator</title>
+  <style>
+    :root {
+      --bg: #f5f7f4;
+      --surface: #ffffff;
+      --surface-soft: #f8fbf8;
+      --ink: #172026;
+      --muted: #66727a;
+      --line: #dfe8e3;
+      --primary: #0f766e;
+      --primary-strong: #0a4f49;
+      --accent: #eab308;
+      --danger: #b91c1c;
+      --warning: #9a5a08;
+      --ok: #047857;
+      --shadow: 0 20px 60px rgba(23, 32, 38, 0.12);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(15, 118, 110, 0.13), transparent 270px),
+        radial-gradient(circle at top right, rgba(234, 179, 8, 0.16), transparent 270px),
+        var(--bg);
+      padding: clamp(10px, 3vw, 24px);
+    }
+
+    .app {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: clamp(10px, 3vw, 26px) 2px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .logo {
+      width: clamp(50px, 12vw, 66px);
+      height: clamp(50px, 12vw, 66px);
+      flex: 0 0 auto;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary-strong), var(--primary));
+      box-shadow: 0 14px 32px rgba(15, 118, 110, 0.24);
+      font-size: clamp(26px, 6vw, 34px);
+    }
+
+    .status-pill {
+      flex: 0 0 auto;
+      border: 1px solid rgba(15, 118, 110, 0.18);
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: var(--primary-strong);
+      background: rgba(255, 255, 255, 0.72);
+      font-size: 0.84rem;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.45rem, 5vw, 2.25rem);
+      line-height: 1.1;
+      color: var(--ink);
+      text-align: left;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 5px 0 0;
+      max-width: 600px;
+      color: var(--muted);
+      font-size: clamp(0.9rem, 2.3vw, 0.98rem);
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(223, 232, 227, 0.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(10px, 2vw, 14px);
+      backdrop-filter: blur(14px);
+    }
+
+    .creator-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.86fr);
+      gap: 12px;
+      align-items: start;
+    }
+
+    .panel {
+      min-width: 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: clamp(14px, 2.4vw, 20px);
+    }
+
+    .panel.output-panel {
+      background: #172026;
+      border-color: #26343b;
+      color: #f8fafc;
+    }
+
+    .panel-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .panel-title h2 {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .panel-title span {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .output-panel .panel-title span {
+      color: #a7b4ba;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 7px;
+      color: var(--ink);
+      font-size: 0.92rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 13px 14px;
+      font-size: 16px;
+      color: var(--ink);
+      background: var(--surface-soft);
+      outline: none;
+      transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+    }
+
+    select {
+      cursor: pointer;
+    }
+
+    textarea {
+      min-height: clamp(330px, 54vh, 520px);
+      resize: vertical;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      white-space: pre;
+      overflow: auto;
+      color: #d8f3ea;
+      background: #10181d;
+      border-color: #2b3940;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--primary);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.13);
+    }
+
+    textarea:focus {
+      background: #10181d;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pin-options {
+      margin-top: 14px;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .actions.single-action {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 560px) {
+      .actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    button {
+      border: 0;
+      border-radius: 12px;
+      padding: 14px 16px;
+      min-height: 48px;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      color: #fff;
+      background: var(--primary);
+      box-shadow: 0 12px 22px rgba(15, 118, 110, 0.18);
+      transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+    }
+
+    button:hover:not(:disabled) {
+      background: var(--primary-strong);
+      box-shadow: 0 14px 26px rgba(15, 118, 110, 0.23);
+      transform: translateY(-1px);
+    }
+
+    button:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    button.secondary {
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+
+    button.secondary:hover:not(:disabled) {
+      color: var(--primary-strong);
+      background: #f4faf8;
+      box-shadow: none;
+    }
+
+    .output-panel button.secondary {
+      color: #f8fafc;
+      background: transparent;
+      border-color: #3b4b53;
+    }
+
+    .output-panel button.secondary:hover:not(:disabled) {
+      color: #fff;
+      background: #223039;
+    }
+
+    button.warning {
+      color: #fff;
+      background: #a16207;
+      box-shadow: 0 12px 24px rgba(180, 83, 9, 0.18);
+    }
+
+    button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .result-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .place {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 13px;
+      background: var(--surface-soft);
+      cursor: pointer;
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .place:hover {
+      border-color: rgba(15, 118, 110, 0.36);
+      background: #fff;
+    }
+
+    .place:active {
+      transform: scale(0.99);
+    }
+
+    .place strong {
+      display: block;
+      color: var(--primary-strong);
+      margin-bottom: 5px;
+    }
+
+    .place small {
+      display: block;
+      color: var(--muted);
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .message {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      display: none;
+    }
+
+    .message.show {
+      display: block;
+    }
+
+    .message.ok {
+      background: #ecfdf5;
+      color: var(--ok);
+      border: 1px solid #bbf7d0;
+    }
+
+    .message.err {
+      background: #fef2f2;
+      color: var(--danger);
+      border: 1px solid #fecaca;
+    }
+
+    .message.warn {
+      background: #fffbeb;
+      color: var(--warning);
+      border: 1px solid #fde68a;
+    }
+
+    .section-title {
+      margin: 18px 0 8px;
+      color: var(--ink);
+      font-size: 1.05rem;
+    }
+
+    @media (max-width: 860px) {
+      .creator-layout {
+        grid-template-columns: 1fr;
+      }
+
+      textarea {
+        min-height: 280px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .status-pill {
+        align-self: flex-start;
+      }
+
+      .grid.two {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        border-radius: 14px;
+        padding: 8px;
+      }
+
+      .panel {
+        padding: 14px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div class="brand">
+        <div class="logo">📍</div>
+        <div>
+          <h1>GeoPin Pin Creator</h1>
+          <p class="subtitle">Crea un pin compatibile con import/export GeoPin.</p>
+        </div>
+      </div>
+      <div class="status-pill">JSON GeoPin v1</div>
+    </section>
+
+    <section class="card">
+      <div class="creator-layout">
+        <section class="panel">
+          <div class="panel-title">
+            <h2>Dati pin</h2>
+            <span>Indirizzo o coordinate</span>
+          </div>
+
+          <div class="grid">
+            <div>
+              <label for="addressInput">Luogo</label>
+              <input id="addressInput" type="text" placeholder="Via del Corso, Roma oppure 41.9028, 12.4964" autocomplete="street-address" />
+            </div>
+          </div>
+
+          <div class="grid two pin-options">
+            <div>
+              <label for="pinName">Nome pin</label>
+              <input id="pinName" type="text" placeholder="Es. Dragona" maxlength="80" />
+            </div>
+
+            <div>
+              <label for="emoji">Icona</label>
+              <select id="emoji" aria-label="Icona pin">
+                <option value="📍">📍 Posizione</option>
+                <option value="🏠">🏠 Casa</option>
+                <option value="🏢">🏢 Ufficio</option>
+                <option value="🏪">🏪 Negozio</option>
+                <option value="🏫">🏫 Scuola</option>
+                <option value="🏥">🏥 Ospedale</option>
+                <option value="⛪">⛪ Chiesa</option>
+                <option value="🏖️">🏖️ Spiaggia</option>
+                <option value="🌲">🌲 Natura</option>
+                <option value="🏔️">🏔️ Montagna</option>
+                <option value="⭐">⭐ Preferito</option>
+                <option value="❤️">❤️ Importante</option>
+                <option value="🚗">🚗 Auto</option>
+                <option value="✈️">✈️ Aereo</option>
+                <option value="🍕">🍕 Cibo</option>
+                <option value="☕">☕ Bar</option>
+                <option value="🅿️">🅿️ Parcheggio</option>
+                <option value="⛽">⛽ Benzina</option>
+                <option value="🚉">🚉 Stazione</option>
+                <option value="🚇">🚇 Metro</option>
+                <option value="🚌">🚌 Fermata</option>
+                <option value="🚲">🚲 Bici</option>
+                <option value="🛵">🛵 Scooter</option>
+                <option value="🚕">🚕 Taxi</option>
+                <option value="🚢">🚢 Nave</option>
+                <option value="🛫">🛫 Aeroporto</option>
+                <option value="🏦">🏦 Banca</option>
+                <option value="🏧">🏧 Bancomat</option>
+                <option value="🛒">🛒 Spesa</option>
+                <option value="🛍️">🛍️ Shopping</option>
+                <option value="🏨">🏨 Hotel</option>
+                <option value="🍽️">🍽️ Ristorante</option>
+                <option value="🍔">🍔 Fast food</option>
+                <option value="🍦">🍦 Gelato</option>
+                <option value="🚻">🚻 Bagni</option>
+                <option value="🧭">🧭 Bussola</option>
+                <option value="🏕️">🏕️ Campeggio</option>
+                <option value="🏞️">🏞️ Parco</option>
+                <option value="🌊">🌊 Mare</option>
+                <option value="🌳">🌳 Alberi</option>
+                <option value="🌅">🌅 Panorama</option>
+                <option value="🎡">🎡 Attrazione</option>
+                <option value="🎭">🎭 Teatro</option>
+                <option value="🏟️">🏟️ Stadio</option>
+                <option value="📸">📸 Foto</option>
+                <option value="🎯">🎯 Obiettivo</option>
+                <option value="⚠️">⚠️ Attenzione</option>
+                <option value="🔒">🔒 Lucchetto</option>
+                <option value="🔑">🔑 Chiave</option>
+                <option value="🧰">🧰 Attrezzi</option>
+                <option value="💡">💡 Idea</option>
+                <option value="📝">📝 Nota</option>
+                <option value="📦">📦 Pacco</option>
+                <option value="📌">📌 Puntina</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="actions">
+            <button id="searchBtn">Genera pin</button>
+            <button id="clearBtn" class="secondary">Pulisci</button>
+          </div>
+
+          <div id="shortLinkActions" class="actions single-action" hidden>
+            <button id="openShortLinkBtn" class="warning">Apri link corto</button>
+          </div>
+
+          <div id="message" class="message"></div>
+
+          <h2 id="resultsTitle" class="section-title" hidden>Risultati</h2>
+          <div id="results" class="result-list"></div>
+        </section>
+
+        <section class="panel output-panel">
+          <div class="panel-title">
+            <h2>JSON GeoPin</h2>
+            <span>Pronto per import</span>
+          </div>
+
+          <textarea id="jsonOutput" readonly placeholder="Il JSON comparirà qui."></textarea>
+
+          <div class="actions">
+            <button id="copyBtn" disabled>Copia JSON</button>
+            <button id="downloadBtn" class="secondary" disabled>Scarica .json</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const addressInput = document.getElementById('addressInput');
+    const pinName = document.getElementById('pinName');
+    const emoji = document.getElementById('emoji');
+    const searchBtn = document.getElementById('searchBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const results = document.getElementById('results');
+    const resultsTitle = document.getElementById('resultsTitle');
+    const jsonOutput = document.getElementById('jsonOutput');
+    const message = document.getElementById('message');
+    const shortLinkActions = document.getElementById('shortLinkActions');
+    const openShortLinkBtn = document.getElementById('openShortLinkBtn');
+
+    let currentJson = null;
+    let lastShortLink = '';
+
+    function showMessage(text, type = 'ok') {
+      message.textContent = text;
+      message.className = `message show ${type}`;
+    }
+
+    function hideMessage() {
+      message.className = 'message';
+      message.textContent = '';
+    }
+
+    function showShortLinkActions(url) {
+      lastShortLink = url;
+      shortLinkActions.hidden = false;
+    }
+
+    function hideShortLinkActions() {
+      lastShortLink = '';
+      shortLinkActions.hidden = true;
+    }
+
+    function formatDateItalian(date = new Date()) {
+      return date.toLocaleString('it-IT', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+    }
+
+    function getPinName(address) {
+      return String(pinName.value.trim() || addressInput.value.trim() || address || 'Posizione').slice(0, 80);
+    }
+
+    function isShortGoogleMapsLink(text) {
+      return /https?:\/\/(maps\.app\.goo\.gl|goo\.gl\/maps)\//i.test(text.trim());
+    }
+
+    function normalizeNumber(value) {
+      return Number(String(value).replace(',', '.'));
+    }
+
+    function validLatLng(lat, lng) {
+      return Number.isFinite(lat) &&
+        Number.isFinite(lng) &&
+        lat >= -90 &&
+        lat <= 90 &&
+        lng >= -180 &&
+        lng <= 180;
+    }
+
+    function extractCoordinatesFromText(text) {
+      const input = text.trim();
+
+      // Formato Google Maps: /@41.7894739,12.3264044,17z
+      const atMatch = input.match(/@(-?\d+(?:\.\d+)?),\s*(-?\d+(?:\.\d+)?)/);
+      if (atMatch) {
+        const lat = normalizeNumber(atMatch[1]);
+        const lng = normalizeNumber(atMatch[2]);
+        if (validLatLng(lat, lng)) return { lat, lng, source: '@lat,lng' };
+      }
+
+      // Formato Google Maps data: !3d41.7894739!4d12.3264044
+      const dataMatch = input.match(/!3d(-?\d+(?:\.\d+)?)!4d(-?\d+(?:\.\d+)?)/);
+      if (dataMatch) {
+        const lat = normalizeNumber(dataMatch[1]);
+        const lng = normalizeNumber(dataMatch[2]);
+        if (validLatLng(lat, lng)) return { lat, lng, source: '!3d!4d' };
+      }
+
+      // Formato URL query: ?q=41.7894739,12.3264044 oppure ?ll=...
+      try {
+        const url = new URL(input);
+        const paramsToCheck = ['q', 'll', 'query', 'center'];
+
+        for (const paramName of paramsToCheck) {
+          const paramValue = url.searchParams.get(paramName);
+          if (!paramValue) continue;
+
+          const paramMatch = paramValue.match(/(-?\d+(?:\.\d+)?)[,\s]+(-?\d+(?:\.\d+)?)/);
+          if (paramMatch) {
+            const lat = normalizeNumber(paramMatch[1]);
+            const lng = normalizeNumber(paramMatch[2]);
+            if (validLatLng(lat, lng)) return { lat, lng, source: paramName };
+          }
+        }
+      } catch (error) {
+        // Non era un URL valido: va benissimo, forse è un indirizzo o coordinate pure.
+      }
+
+      // Coordinate pure o presenti in mezzo al testo.
+      const plainMatch = input.match(/(-?\d+(?:\.\d+)?)[,\s]+(-?\d+(?:\.\d+)?)/);
+      if (plainMatch) {
+        const lat = normalizeNumber(plainMatch[1]);
+        const lng = normalizeNumber(plainMatch[2]);
+        if (validLatLng(lat, lng)) return { lat, lng, source: 'coordinate' };
+      }
+
+      return null;
+    }
+
+    function buildGeoPinExport({ lat, lng, address }) {
+      const singlePin = {
+        id: Date.now(),
+        name: getPinName(address),
+        emoji: String(emoji.value || '📍').slice(0, 8),
+        categoryId: 'altro',
+        lat: Number(lat),
+        lng: Number(lng),
+        accuracy: 10,
+        time: formatDateItalian(),
+        address: address || ''
+      };
+
+      return {
+        type: 'geopin-pins',
+        version: 1,
+        exportedAt: new Date().toISOString(),
+        pins: [singlePin]
+      };
+    }
+
+    function renderJson(data) {
+      currentJson = data;
+      jsonOutput.value = JSON.stringify(data, null, 2);
+      copyBtn.disabled = false;
+      downloadBtn.disabled = false;
+    }
+
+    async function reverseGeocode(lat, lng) {
+      const url = new URL('https://nominatim.openstreetmap.org/reverse');
+      url.searchParams.set('format', 'jsonv2');
+      url.searchParams.set('lat', String(lat));
+      url.searchParams.set('lon', String(lng));
+      url.searchParams.set('accept-language', 'it');
+
+      const response = await fetch(url.toString(), {
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error('Coordinate trovate, ma non riesco a ricavare l’indirizzo.');
+      }
+
+      const data = await response.json();
+      return data.display_name || '';
+    }
+
+    async function generateFromCoordinates(coords) {
+      searchBtn.disabled = true;
+      searchBtn.textContent = 'Creo JSON...';
+
+      try {
+        let readableAddress = '';
+
+        try {
+          readableAddress = await reverseGeocode(coords.lat, coords.lng);
+        } catch (reverseError) {
+          readableAddress = '';
+        }
+
+        const generated = buildGeoPinExport({
+          lat: coords.lat,
+          lng: coords.lng,
+          address: readableAddress
+        });
+
+        renderJson(generated);
+
+        const sourceLabel = coords.source ? ` (${coords.source})` : '';
+        if (readableAddress) {
+          showMessage(`Coordinate riconosciute${sourceLabel}. Indirizzo ricavato e JSON generato.`, 'ok');
+        } else {
+          showMessage(`Coordinate riconosciute${sourceLabel}. JSON generato senza indirizzo leggibile.`, 'warn');
+        }
+      } finally {
+        searchBtn.disabled = false;
+        searchBtn.textContent = 'Cerca / genera';
+      }
+    }
+
+    async function searchAddress() {
+      hideMessage();
+      hideShortLinkActions();
+      results.innerHTML = '';
+      resultsTitle.hidden = true;
+      jsonOutput.value = '';
+      copyBtn.disabled = true;
+      downloadBtn.disabled = true;
+      currentJson = null;
+
+      const query = addressInput.value.trim();
+
+      if (!query) {
+        showMessage('Inserisci un indirizzo, coordinate o un link Google Maps.', 'err');
+        return;
+      }
+
+      if (isShortGoogleMapsLink(query)) {
+        showShortLinkActions(query);
+        showMessage(
+          'Apri il link corto, copia l’URL completo o le coordinate e incollale qui.',
+          'warn'
+        );
+        return;
+      }
+
+      const coords = extractCoordinatesFromText(query);
+      if (coords) {
+        await generateFromCoordinates(coords);
+        return;
+      }
+
+      searchBtn.disabled = true;
+      searchBtn.textContent = 'Ricerca in corso...';
+
+      try {
+        const url = new URL('https://nominatim.openstreetmap.org/search');
+        url.searchParams.set('format', 'jsonv2');
+        url.searchParams.set('q', query);
+        url.searchParams.set('limit', '5');
+        url.searchParams.set('addressdetails', '1');
+        url.searchParams.set('accept-language', 'it');
+
+        const response = await fetch(url.toString(), {
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Errore nella ricerca. Codice HTTP: ' + response.status);
+        }
+
+        const data = await response.json();
+
+        if (!Array.isArray(data) || data.length === 0) {
+          showMessage('Nessun risultato trovato. Prova con un indirizzo più completo.', 'err');
+          return;
+        }
+
+        showMessage('Scegli il risultato corretto per generare il JSON.', 'ok');
+        resultsTitle.hidden = false;
+
+        data.forEach((place, index) => {
+          const div = document.createElement('div');
+          div.className = 'place';
+
+          const title = document.createElement('strong');
+          title.textContent = `Risultato ${index + 1}`;
+
+          const desc = document.createElement('small');
+          desc.textContent = place.display_name;
+
+          const coordsLine = document.createElement('small');
+          coordsLine.textContent = `Coordinate: ${place.lat}, ${place.lon}`;
+
+          div.appendChild(title);
+          div.appendChild(desc);
+          div.appendChild(coordsLine);
+
+          div.addEventListener('click', () => {
+            const generated = buildGeoPinExport({
+              lat: Number(place.lat),
+              lng: Number(place.lon),
+              address: place.display_name || ''
+            });
+
+            renderJson(generated);
+            showMessage('JSON generato. Ora puoi copiarlo o scaricarlo.', 'ok');
+          });
+
+          results.appendChild(div);
+        });
+
+      } catch (error) {
+        showMessage(error.message || 'Errore imprevisto durante la ricerca.', 'err');
+      } finally {
+        searchBtn.disabled = false;
+        searchBtn.textContent = 'Cerca / genera';
+      }
+    }
+
+    async function copyJson() {
+      if (!jsonOutput.value) return;
+
+      try {
+        await navigator.clipboard.writeText(jsonOutput.value);
+        showMessage('JSON copiato negli appunti.', 'ok');
+      } catch (error) {
+        jsonOutput.focus();
+        jsonOutput.select();
+        showMessage('Non riesco a copiare automaticamente. Seleziona il testo e copialo manualmente.', 'err');
+      }
+    }
+
+    function downloadJson() {
+      if (!currentJson) return;
+
+      const blob = new Blob([JSON.stringify(currentJson, null, 2)], {
+        type: 'application/json'
+      });
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `geopin-pin-${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+
+      showMessage('File JSON scaricato.', 'ok');
+    }
+
+    function clearAll() {
+      addressInput.value = '';
+      pinName.value = '';
+      emoji.value = '📍';
+      results.innerHTML = '';
+      resultsTitle.hidden = true;
+      jsonOutput.value = '';
+      copyBtn.disabled = true;
+      downloadBtn.disabled = true;
+      currentJson = null;
+      hideMessage();
+      hideShortLinkActions();
+      addressInput.focus();
+    }
+
+    searchBtn.addEventListener('click', searchAddress);
+    clearBtn.addEventListener('click', clearAll);
+    copyBtn.addEventListener('click', copyJson);
+    downloadBtn.addEventListener('click', downloadJson);
+
+    openShortLinkBtn.addEventListener('click', () => {
+      if (lastShortLink) {
+        window.open(lastShortLink, '_blank', 'noopener,noreferrer');
+      }
+    });
+
+    addressInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        searchAddress();
+      }
+    });
+  </script>
+</body>
+</html>
