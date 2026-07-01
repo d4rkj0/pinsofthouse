@@ -923,13 +923,57 @@
   color: #666; /* Colore più tenue per il sottotitolo */
 }
 
-  </style>
-</head>
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
 
-<body>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="index.html" aria-label="Pin Soft House">
+    .play-badge-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 0;
+      border-radius: 10px;
+      transition: transform .16s ease, filter .16s ease;
+      max-width: 100%;
+    }
+
+    .play-badge-link:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .play-badge-link img,
+    .google-play-badge {
+      display: block;
+      width: min(240px, 100%);
+      height: auto;
+      max-height: 58px;
+      object-fit: contain;
+    }
+
+    .cta-band .play-badge-link img,
+    .cta-band .google-play-badge {
+      max-height: 62px;
+    }
+
+    @media (max-width: 620px) {
+      .article-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .article-actions .btn,
+      .play-badge-link {
+        width: 100%;
+      }
+
+      .play-badge-link {
+        justify-content: center;
+      }
+    }
+
         <span class="logo"><img src="geo-icon-only.png" /></span>
         <span style="color:white; margin-bottom: 2px;">
           Pin Soft House
@@ -958,7 +1002,9 @@
         </p>
 
         <div class="article-actions">
-          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.pinsofthouse.geopin" target="_blank" rel="noopener noreferrer">Download on Google Play</a>
+          <a class="play-badge-link" href="https://play.google.com/store/apps/details?id=com.pinsofthouse.geopin" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+            <img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+          </a>
           <a class="btn btn-secondary" href="#immagini">View images</a>
         </div>
       </div>
@@ -1060,7 +1106,9 @@
           Download Geo Pin and keep parking spots, useful places, and personal points always within reach.
         </p>
         <div class="article-actions">
-          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=pin.soft.housegeopin" target="_blank" rel="noopener noreferrer">Open Google Play</a>
+          <a class="play-badge-link" href="https://play.google.com/store/apps/details?id=pin.soft.housegeopin" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+            <img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+          </a>
           <a class="btn btn-secondary" href="https://d4rkj0.github.io/geopin-privacy/geopin_privacy_policy_en.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
           <a class="btn btn-secondary" href="index.html">Back to home</a>
         </div>
