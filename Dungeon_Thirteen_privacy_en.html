@@ -3,250 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dungeon Thirteen - Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for Dungeon Thirteen by Pin Soft House." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://d4rkj0.github.io/pinsofthouse/Dungeon_Thirteen_privacy_en.html" />
+  <link rel="alternate" hreflang="it" href="https://d4rkj0.github.io/pinsofthouse/Dungeon_Thirteen_privacy_ita.html" />
+  <link rel="alternate" hreflang="en" href="https://d4rkj0.github.io/pinsofthouse/Dungeon_Thirteen_privacy_en.html" />
+  <title>Dungeon Thirteen — Privacy Policy</title>
+  <link rel="stylesheet" href="dungeon-thirteen.css" />
   <style>
-    :root {
-      --bg: #0f0b08;
-      --panel: #1b130d;
-      --text: #f5ead8;
-      --muted: #c7b89e;
-      --gold: #d6a84f; 
-      --red: #8f2f22;
-      --border: #3a2718;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(143, 47, 34, 0.25), transparent 35%),
-        linear-gradient(180deg, #17100b 0%, var(--bg) 100%);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 32px 18px;
-    }
-
-    header {
-      text-align: center;
-      padding: 42px 20px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: linear-gradient(180deg, rgba(214,168,79,0.12), rgba(27,19,13,0.95));
-      box-shadow: 0 10px 40px rgba(0,0,0,0.45);
-      margin-bottom: 28px;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 6px 12px;
-      border: 1px solid var(--gold);
-      border-radius: 999px;
-      color: var(--gold);
-      font-size: 0.85rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      color: var(--gold);
-      letter-spacing: 0.03em;
-    }
-
-    .subtitle {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    .card {
-      background: rgba(27, 19, 13, 0.92);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 18px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.25);
-    }
-
-    h2 {
-      color: var(--gold);
-      margin-top: 0;
-      font-size: 1.35rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 8px;
-    }
-
-    p {
-      margin: 0 0 12px;
-    }
-
-    ul {
-      margin: 10px 0 0;
-      padding-left: 22px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    strong {
-      color: #ffe0a1;
-    }
-
-    .highlight {
-      border-left: 4px solid var(--gold);
-      padding: 14px 16px;
-      background: rgba(214,168,79,0.08);
-      border-radius: 10px;
-      color: var(--text);
-    }
-
-    footer {
-      text-align: center;
-      color: var(--muted);
-      padding: 28px 8px 10px;
-      font-size: 0.95rem;
-    }
-
-    a {
-      color: var(--gold);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 18px 12px;
-      }
-
-      header {
-        padding: 32px 14px;
-      }
-
-      .card {
-        padding: 18px;
-      }
-    }
+    .privacy-hero { padding: 46px 0 22px; border-bottom: 1px solid rgba(245, 200, 101, .22); }
+    .brand .mark { overflow: hidden; }
+    .brand .mark img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .privacy-hero h1 { margin: 10px 0 8px; font-size: clamp(32px, 5vw, 52px); letter-spacing: -.04em; color: var(--text); }
+    .privacy-hero .lead { margin: 0; max-width: 760px; font-size: 16px; }
+    .privacy-layout { width: min(900px, calc(100% - 32px)); }
+    .policy-card { padding: clamp(24px, 4vw, 42px); border-radius: 18px; border-top: 3px solid var(--gold); background: rgba(20, 13, 34, .9); box-shadow: 0 18px 44px rgba(0, 0, 0, .28); }
+    .policy-card h2 { margin: 34px 0 12px; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .11); color: var(--text); font-size: clamp(20px, 2.5vw, 25px); letter-spacing: -.02em; }
+    .policy-card h2:first-of-type { margin-top: 0; }
+    .policy-card p, .policy-card li { color: var(--muted); }
+    .policy-card p { margin: 0 0 14px; }
+    .policy-card ul { margin: 0 0 18px; padding-left: 22px; }
+    .policy-card li { margin: 7px 0; }
+    .policy-card strong { color: var(--text); }
+    .notice { margin: 22px 0 34px; padding: 18px 20px; border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; background: rgba(255, 255, 255, .045); color: var(--text); }
+    .meta { color: var(--muted); font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 30px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .11); color: var(--gold); font-weight: 800; }
+    .back-link:hover { text-decoration: underline; }
+    a:not(.brand):not(.btn):not(.back-link) { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+    @media (max-width: 760px) { .privacy-hero { padding-top: 32px; } .nav-links a[href="dungeon-thirteen-en.html"] { display: inline; } }
   </style>
 </head>
 <body>
-  <main class="container">
-    <header>
-      <div class="badge">Privacy Policy</div>
-      <h1>Dungeon Thirteen</h1>
-      <p class="subtitle">A fantasy card game of risk, realms, heroes and monsters.</p>
-    </header>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index-en.html" aria-label="Pin Soft House home">
+        <span class="mark"><img src="images/dungeonthirteen/icon-foreground.png" alt="Dungeon Thirteen" /></span><span>Pin Soft House<small>Giuseppe Maiello</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="dungeon-thirteen-en.html">Dungeon Thirteen</a>
+        <a href="index-en.html#app">Apps</a>
+        <a href="index-en.html#supporto">Support</a>
+        <a href="Dungeon_Thirteen_privacy_ita.html" hreflang="it" aria-label="Switch to Italian">IT</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="card">
-      <h2>Privacy Policy</h2>
-      <p><strong>Effective date:</strong> [Insert date]</p>
-      <p>
-        This Privacy Policy explains how <strong>Dungeon Thirteen</strong> handles user information.
-        The game is designed to respect your privacy and does not require account registration.
-      </p>
+  <main>
+    <section class="wrap privacy-hero">
+      <span class="eyebrow">Dungeon Thirteen</span>
+      <h1>Privacy Policy</h1>
+      <p class="lead">This policy explains how information is handled when you use Dungeon Thirteen, including local play, online multiplayer, and Google Play Games features.</p>
     </section>
 
-    <section class="card">
-      <h2>Data Collection</h2>
-      <p>
-        Dungeon Thirteen does <strong>not collect, store, share, sell, or transmit personal data</strong>.
-      </p>
-      <p>
-        The game does not require your name, email address, phone number, location, contacts,
-        photos, or any other personal information.
-      </p>
-    </section>
+    <section class="wrap privacy-layout section">
+      <article class="card policy-card">
+        <p class="meta"><strong>Last updated:</strong> August 4, 2026</p>
+        <div class="notice"><strong>Summary.</strong> Local game data is stored on your device. Online multiplayer uses Firebase Authentication and Cloud Firestore. Google Play Games Services is used for leaderboards and achievements when the service is available on your device.</div>
 
-    <section class="card">
-      <h2>Local Save Data</h2>
-      <div class="highlight">
-        Dungeon Thirteen only uses local storage on the user's device to save game-related data.
-      </div>
-      <p style="margin-top: 14px;">
-        This may include information such as game progress, settings, preferences, scores,
-        or other gameplay-related data.
-      </p>
-      <p>
-        This data remains on your device and is not sent to external servers by the game.
-        If you uninstall the game or clear the app data, this locally saved information may be deleted.
-      </p>
-    </section>
+        <h2>1. Data Controller</h2>
+        <p><strong>Giuseppe Maiello — Pin Soft House</strong><br />Email: <a href="mailto:pinsofthouse@gmail.com">pinsofthouse@gmail.com</a></p>
 
-    <section class="card">
-      <h2>Internet Connection</h2>
-      <p>
-        Dungeon Thirteen does not require an online account and does not use external servers
-        to store your personal information.
-      </p>
-    </section>
+        <h2>2. Information We Do Not Ask For Directly</h2>
+        <p>Dungeon Thirteen does not ask you to create a separate in-game account or directly request your name, email address, phone number, precise location, contacts, photos, or social-media account. Google Play Games sign-in, described below, uses the Google account and Play Games profile that you have already chosen to use on your device.</p>
 
-    <section class="card">
-      <h2>Third-Party Services</h2>
-      <p>
-        Dungeon Thirteen does not intentionally use third-party analytics, advertising systems,
-        tracking tools, or social login services.
-      </p>
-      <p>
-        If the app is distributed through an app store, the store provider may process some information
-        according to its own privacy policy.
-      </p>
-    </section>
+        <h2>3. Local Game Data</h2>
+        <p>The game stores gameplay-related information locally on your device, such as settings, preferences, and game progress. This information is used only to operate the game on that device. You can remove it by clearing the app data or uninstalling the app.</p>
 
-    <section class="card">
-      <h2>Children's Privacy</h2>
-      <p>
-        Dungeon Thirteen does not knowingly collect personal information from children.
-        Since the game does not collect personal data, no personal information from children is stored or shared by the game.
-      </p>
-    </section>
+        <h2>4. Online Multiplayer and Firebase</h2>
+        <p>Multiplayer is optional. If you choose to use it, Dungeon Thirteen uses <strong>Firebase Authentication</strong> and <strong>Cloud Firestore</strong>, services provided by Google Firebase.</p>
+        <ul>
+          <li><strong>Anonymous authentication:</strong> Firebase creates a randomly generated anonymous identifier so the game can recognize a player during online play. It is not linked by the game to your name, email address, or a conventional user account.</li>
+          <li><strong>Match information:</strong> Firestore is used to exchange the information needed to create and operate multiplayer rooms and matches, such as room and player state, game actions, and any display name you choose to enter. Do not use a real name or other personal information as a display name.</li>
+          <li><strong>Technical information:</strong> As the service provider, Firebase may process technical information such as IP address and user-agent information to provide authentication, security, and abuse prevention. Firebase Authentication processes data in the United States; Firestore may process data on Google's global infrastructure depending on its configured location.</li>
+        </ul>
+        <p>We do not use Firebase Analytics, advertising, or social-login features in Dungeon Thirteen.</p>
+        <p>Google's Firebase privacy information is available at <a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener noreferrer">Privacy and Security in Firebase</a>.</p>
 
-    <section class="card">
-      <h2>Data Security</h2>
-      <p>
-        Since Dungeon Thirteen does not collect personal data, there is no personal user database managed by the game.
-        Local game data is stored only on the user's device.
-      </p>
-    </section>
+        <h2>5. Google Play Games Services</h2>
+        <p>On Android devices, users who are already signed in to Google Play Games may be signed in automatically to Google Play Games Services. This optional Google service is used to submit and display leaderboard scores and to record and show achievement progress and trophies.</p>
+        <p>To provide these features, Google Play Games Services processes your Play Games profile and game-service data, which can include your gamer identity or profile name, player identifier, scores, achievements, and related app or device information. The game uses the information made available by the service only for its Google Play Games features. Google handles this information under the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> and its Play Games settings.</p>
 
-    <section class="card">
-      <h2>Changes to This Privacy Policy</h2>
-      <p>
-        This Privacy Policy may be updated from time to time. Any changes will be published on this page.
-      </p>
-    </section>
+        <h2>6. Purpose and Legal Basis</h2>
+        <p>Local data is used to provide the game and preserve your settings and progress. Multiplayer data is used only to provide the online multiplayer feature you choose to use, including securing access to rooms and synchronising gameplay. Google Play Games data is used to provide leaderboards and achievements. Where applicable, this processing is necessary to provide the requested game functionality.</p>
 
-    <section class="card">
-      <h2>Contact</h2>
-      <p>
-        For questions about this Privacy Policy, contact:
-      </p>
-      <p>
-        <strong>Giuseppe Maiello - Pin Soft House</strong><br />
-        <a href="mailto:pinsofthouse@gmail.com">pinsofthouse@gmail.com</a>
-      </p>
-    </section>
+        <h2>7. Sharing and Retention</h2>
+        <p>We do not sell personal information or use it for advertising or profiling. Data used for multiplayer is shared only with Google Firebase as the service provider and with the other players in the same game where it is necessary to show the shared match state or a display name. Google Play Games data is processed by Google to provide its game-service features.</p>
+        <p>Local data remains on your device until you remove it. Multiplayer room and match data is kept in Firestore only for as long as needed to operate the online feature and maintain the game service; Firebase may retain service and security data according to its own policies. Leaderboard scores and achievement data are retained by Google Play Games Services according to Google's policies and your Play Games account settings.</p>
 
-    <footer>
-      © <span id="year"></span> Dungeon Thirteen. All rights reserved.
-    </footer>
+        <h2>8. Children's Privacy</h2>
+        <p>Dungeon Thirteen is not designed to collect personal information from children. Because multiplayer display names are visible to other players, users should not enter personal information in them.</p>
+
+        <h2>9. Your Choices and Contact</h2>
+        <p>You can choose not to use multiplayer, clear local game data through your device settings, or manage your Google Play Games profile and data through your Google account settings. Where applicable data-protection law grants you rights of access, correction, deletion, restriction, objection, or portability, you can contact us to make a request at <a href="mailto:pinsofthouse@gmail.com">pinsofthouse@gmail.com</a>. You may also have the right to complain to your local data-protection authority.</p>
+        <p>To help us locate an online multiplayer record, include the anonymous player identifier or room details only if you have them. Do not send sensitive information by email. Requests concerning your Google account or Play Games profile should be managed through Google account settings.</p>
+
+        <h2>10. Changes to This Policy</h2>
+        <p>We may update this policy when the game or its services change. The latest version will always be published on this page.</p>
+
+        <a class="back-link" href="dungeon-thirteen-en.html">← Back to Dungeon Thirteen</a>
+      </article>
+    </section>
   </main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <footer><div class="wrap">© <span id="year"></span> Giuseppe Maiello — Pin Soft House<br />Dungeon Thirteen</div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
