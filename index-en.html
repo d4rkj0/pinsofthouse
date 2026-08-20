@@ -17,6 +17,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://d4rkj0.github.io/pinsofthouse/index-en.html" />
   <meta property="og:image" content="https://d4rkj0.github.io/pinsofthouse/images/brand/icona_sviluppatore.png" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer" />
 
   <style>
     :root {
@@ -468,10 +470,14 @@
       display: grid;
       place-items: center;
       font-size: 28px;
-      background: rgba(255,209,102,.13);
-      border: 1px solid rgba(255,209,102,.22);
+      background: rgba(34, 211, 238, .12);
+      border: 1px solid rgba(34, 211, 238, .24);
       margin-bottom: 14px;
+      color: var(--cyan);
+      font-size: 24px;
+      text-shadow: 0 0 22px rgba(34, 211, 238, .35);
     }
+
 
     .feature h3 {
       margin: 0 0 8px;
@@ -710,10 +716,14 @@
       border-radius: 20px;
       display: grid;
       place-items: center;
-      background: rgba(255,209,102,.13);
-      border: 1px solid rgba(255,209,102,.22);
+      background: rgba(34, 211, 238, .12);
+      border: 1px solid rgba(34, 211, 238, .24);
       font-size: 28px;
+      color: var(--cyan);
+      font-size: 24px;
+      text-shadow: 0 0 22px rgba(34, 211, 238, .35);
     }
+
 
     .support-card h3 {
       margin: 0 0 6px;
@@ -785,10 +795,32 @@
     }
 
     .coming-info h3 {
-      margin: 0 0 10px;
+      position: relative;
+      width: fit-content;
+      margin: 0 0 20px;
       font-size: clamp(1.8rem, 4vw, 3.2rem);
       line-height: 1;
-      letter-spacing: -.055em;
+      white-space: nowrap;
+      letter-spacing: -.065em;
+      color: var(--gold);
+      background: linear-gradient(110deg, #fff7c7 4%, #ffd166 44%, #ff9f43 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px rgba(255, 209, 102, .24);
+    }
+
+    .coming-info h3::after {
+      content: "";
+      position: absolute;
+      left: 2px;
+      bottom: -10px;
+      width: 100%;
+      height: 5px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #ffd166, #ff9f43, transparent);
+      box-shadow: 0 0 12px rgba(255, 209, 102, .60);
+      clip-path: polygon(0 50%, 14% 34%, 50% 0, 86% 34%, 100% 50%, 86% 66%, 50% 100%, 14% 66%);
     }
 
     .coming-info p {
@@ -825,6 +857,14 @@
       border: 1px solid rgba(255,255,255,.10);
       color: var(--text);
       font-weight: 800;
+    }
+
+    .coming-features i {
+      width: 18px;
+      text-align: center;
+      margin-right: 2px;
+      color: var(--cyan);
+      text-shadow: 0 0 16px rgba(34, 211, 238, .38);
     }
 
     .coming-side-image {
@@ -1318,19 +1358,19 @@
 
       <div class="grid">
         <article class="feature">
-          <div class="ico">📱</div>
+          <div class="ico" aria-hidden="true"><i class="fa-solid fa-mobile-screen-button"></i></div>
           <h3>Smartphone apps</h3>
           <p>Responsive interfaces, easy to use and designed for mobile devices.</p>
         </article>
 
         <article class="feature">
-          <div class="ico">🎲</div>
+          <div class="ico" aria-hidden="true"><i class="fa-solid fa-dice-d20"></i></div>
           <h3>Gaming utilities</h3>
           <p>Digital tools for board games, dice, turns, and small tabletop helpers.</p>
         </article>
 
         <article class="feature">
-          <div class="ico">🧪</div>
+          <div class="ico" aria-hidden="true"><i class="fa-solid fa-flask"></i></div>
           <h3>Experimentation</h3>
           <p>Prototypes, web games, AR/VR ideas, and new interactive experiences to explore.</p>
         </article>
@@ -1462,10 +1502,10 @@
             </p>
 
             <div class="coming-features" aria-label="Dungeon Thirteen features">
-              <span>🃏 Tactical card game</span>
-              <span>🏰 Three realms to control</span>
-              <span>💀 Do not go over 13</span>
-              <span>🏆 Highest value wins</span>
+              <span><i class="fa-solid fa-clone" aria-hidden="true"></i>&nbsp;Tactical card game</span>
+              <span><i class="fa-solid fa-chess-rook" aria-hidden="true"></i>&nbsp;Three realms to control</span>
+              <span><i class="fa-solid fa-skull" aria-hidden="true"></i>&nbsp;Do not go over 13</span>
+              <span><i class="fa-solid fa-trophy" aria-hidden="true"></i>&nbsp;Highest value wins</span>
             </div>
             <p style="margin: 18px 0 0;"><a class="mini-link" href="dungeon-thirteen-en.html">Discover Dungeon Thirteen</a> · <a class="mini-link" href="Dungeon_Thirteen_privacy_en.html">Privacy</a></p>
           </article>
@@ -1488,7 +1528,7 @@
       </div>
 
       <article class="support-card">
-        <div class="ico">✉️</div>
+        <div class="ico" aria-hidden="true"><i class="fa-solid fa-envelope"></i></div>
         <div>
           <h3>Developer contact</h3>
           <p>
